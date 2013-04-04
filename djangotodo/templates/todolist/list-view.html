@@ -38,15 +38,22 @@
     </div>
 
     <div class="container">
-    	<ul>
+    	<!--<ul>
     		{% for task in tasks %}
     	    <li>{{task}} {% if task.completed %}(completed){% endif %}</li>
     	    {% endfor %}
-    	</ul>
+    	</ul>-->
+        <form action="" method="post" style="margin-bottom: 5em;">
+            {% csrf_token %}
+            {{ formset }}
+            <div style="margin-top: 2em;">
+                <input type="submit" name="button" value="Update!">
+            </div>
+        </form>
     	<form action="" method="post">
     		{% csrf_token %}
     		{{ form.as_p }}
-    		<input type="submit" value="Create!">
+    		<input type="submit" name="button" value="Create!">
     	</form>
     </div> <!-- /container -->
 
