@@ -40,7 +40,7 @@
     <div class="container">
     	<ul>
     		{% for task in tasks %}
-    	    <li>{{task}}</li>
+    	    <li>{{task}} {% if task.completed %}(completed){% endif %}</li>
     	    {% endfor %}
     	</ul>
     	<form action="" method="post">
